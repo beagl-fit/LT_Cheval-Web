@@ -1,5 +1,5 @@
 # Lokotrans Cheval
-This is a website for the aforementioned company.
+This is a website for the aforementioned company made using yii2 PHP framework.
 
 *This versions is missing a web.php config file, and there is only a localhost database due to security reasons.*
 
