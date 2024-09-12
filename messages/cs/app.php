@@ -38,6 +38,7 @@
         'contact' => 'KONTAKT',
         "welcome" => "Vítejte v",
         "news" => "AKTUALITY",
+        "rights" => "Všechna práva vyhrazena.",
 
         "none" => "Momentálně nemáme",
 

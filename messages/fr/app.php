@@ -56,6 +56,7 @@
         "state" => "État",
         "length" => "Longueur",
         "horse" => "Cheval",
+        "rights" => "Tous droits réservés.",
 
         "socials" => "RÉSEAUX SOCIAUX",
         "contact_cz" => "CONTACT POUR<br>CZ/EN",
