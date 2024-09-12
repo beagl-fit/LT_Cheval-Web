@@ -11,7 +11,8 @@ $this->title = 'Lokotrans Cheval';
 <!--    Carousel    -->
     <div class="carousel-container">
         <div class="carousel-line-top"></div>
-        <div id="carouselIndex" class="carousel slide index-carousel" data-bs-ride="carousel" data-bs-interval="4000">
+        <div id="carouselIndex" class="carousel slide index-carousel" data-bs-ride="carousel" data-bs-interval="4000"
+             data-bs-pause="false">
             <div class="carousel-inner">
                 <?php
                 /* @var app\models\Carousel[]  $carousel */
@@ -45,9 +46,9 @@ $this->title = 'Lokotrans Cheval';
     </div>
 
     <!---   News   --->
-    <div class="colored-container px-3 news-container">
-        <h1><?= Yii::t('app', 'news') ?></h1>
-        <div class="row row-cols-1 row-cols-lg-3 card-row">
+    <div id="news-container" class="colored-container px-3 news-container">
+        <h6><?= Yii::t('app', 'news') ?></h6>
+        <div class="row row-cols-1 row-cols-lg-3 card-row mx-auto">
             <?php
             $currentLanguage = Yii::$app->language;
             /** @var app\models\News[] $news */
@@ -79,3 +80,22 @@ $this->title = 'Lokotrans Cheval';
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const footer = document.getElementById("footer");
+
+        function adjustFooterPosition() {
+            const bot = $("#news-container").position().top + $("#news-container").height() + 20;
+            footer.style.position = 'absolute';
+            footer.style.top = bot + 'px';
+        }
+
+        adjustFooterPosition();
+
+        window.addEventListener("resize", function() {
+            adjustFooterPosition();
+        });
+    });
+
+</script>

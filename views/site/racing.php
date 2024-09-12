@@ -12,7 +12,7 @@ $this->title = Yii::t('app', 'racing');
     <h1 class="text-center"><?= Html::encode(mb_strtoupper($this->title, 'UTF-8')) ?></h1>
     <div class="line"></div>
 
-    <div class="row justify-content-evenly py-5">
+    <div class="row justify-content-evenly py-5 mx-auto">
         <div class="col-12 col-md-7 col-xl-3 mb-3 py-5 racing">
             <div class="card racing-card text-end">
                 <img src="<?= Yii::getAlias('@web/images/racing/jersey_cz.png') ?>" class="card-img-top"
@@ -52,7 +52,8 @@ $this->title = Yii::t('app', 'racing');
                 <div class="card-body">
                     <h3 class="card-title text-center"><?= Yii::t('app', 'racing_fr')?></h3>
                     <p class="card-text text-center"><?= Yii::t('app', 'racing_trainer') ?> -
-                        Stephane Wattel</p>
+                        Stephane Wattel
+                    </p>
                 </div>
                 <div class="card-body text-center">
                     <div class="dropdown-center">

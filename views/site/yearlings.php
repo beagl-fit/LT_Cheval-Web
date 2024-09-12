@@ -44,7 +44,7 @@ $horsesJson = json_encode($horses);
                     else
                         echo Html::begintag('div', ['class' => 'carousel-item']);
                     ?>
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center mx-auto">
                         <div class="col-10 col-lg-5 py-3">
                             <div class="card yearlings-card">
                                 <img src="<?= '../images/horses/' . Html::encode($horses[$i]->image_name) ?>"
@@ -112,12 +112,12 @@ $horsesJson = json_encode($horses);
                 </div>
             <?php } ?>
         </div>
-        <button name="carusel_btn" class="carousel-control-prev pe-5" type="button" data-bs-target="#carouselExample"
+        <button name="carusel_btn" class="carousel-control-prev pe-3 pe-lg-5" type="button" data-bs-target="#carouselExample"
                 data-bs-slide="prev">
             <img src="../images/icons/prev_icon.svg" alt="<"/>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button name="carusel_btn" class="carousel-control-next ps-5" type="button" data-bs-target="#carouselExample"
+        <button name="carusel_btn" class="carousel-control-next ps-3 ps-lg-5" type="button" data-bs-target="#carouselExample"
                 data-bs-slide="next">
             <img src="../images/icons/next_icon.svg" alt=">"/>
             <span class="visually-hidden">Next</span>

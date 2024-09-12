@@ -75,7 +75,7 @@ $this->title = 'Contact';
             </div>
 
             <div class="col-lg-4 py-2 py-lg-0">
-                <div class="container contact-container">
+                <div class="container contact-container my-2">
                     <h3 class="text-center pb-1"><?= Yii::t('app', 'socials') ?></h3>
                     <div class="row justify-content-evenly">
                         <div class="col-2">
@@ -102,7 +102,7 @@ $this->title = 'Contact';
         </div>
     </div>
 
-    <div class="row d-flex pt-5">
+    <div class="row pt-5 mx-auto">
         <div class="col-xl-8 py-2 py-lg-0 my-3">
             <div class="container contact-container">
                 <h3 class="text-center pb-1"><?= Yii::t('app', 'address') ?></h3>

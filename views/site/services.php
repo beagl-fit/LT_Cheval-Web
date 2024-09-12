@@ -9,8 +9,8 @@ $this->title = Yii::t('app', 'services_header');
 <div class="site pt-5">
     <img src="../images/backgrounds/IMG_1942.jpg" alt="..." class="services-image">
     <div class="row pt-5 justify-content-center">
-        <div class="col-12 col-lg-9 col-xl-7 position-relative" style="margin: 2vw; padding: 0">
-            <div class="colored-container px-5 py-5">
+        <div class="col-12 col-lg-9 col-xl-7 position-relative" style="padding: 0;">
+            <div class="colored-container p-5">
                 <h1 class="text-center pt-5"><?= Html::encode(mb_strtoupper($this->title, 'UTF-8')) ?></h1>
                 <div class="line mb-5"></div>
                 <p class="text-center">

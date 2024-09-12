@@ -13,8 +13,8 @@ $this->title = Yii::t('app', 'gallery');
 
 
     <div class="p-4 colored-container">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
-<!--            --><?php
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mx-auto">
+            <?php
             /** @var app\models\Gallery[] $gallery */
             foreach ($gallery as $index => $image) { ?>
                 <!-- Thumbnails -->
@@ -81,6 +81,13 @@ $this->title = Yii::t('app', 'gallery');
                     nextButton.removeAttribute('disabled');
                 }
             });
+            const content = modal.childNodes[1].childNodes[1]
+            content.childNodes[3].addEventListener('click', function () {
+                content.childNodes[1].click();
+            });
+            console.log(content);
         });
+
+        console.log(modals.nextSibling)
     });
 </script>
