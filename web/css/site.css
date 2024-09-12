@@ -5,13 +5,15 @@ body {
 
     --color_elem: #c23775;
     --color_bg: var(--light_body_color);
-    /*--color_nav: var(--dark_body_color);*/
     --color_nav: var(--middle_body_color);
 
     background-color: var(--color_bg);
-    /*background-color: red;*/
 
     font-family: Catchy Mager, Cardo, serif;
+}
+
+img, div {
+    max-width: 100%;
 }
 
 h1 {
@@ -46,12 +48,14 @@ main > .container {
 }
 
 .footer {
-    background-color: #f5f5f5;
+    background-color: rgba(194, 55, 117, 0.35);
     font-size: .9em;
-    height: 60px;
+    width: 100%;
+    z-index: 2000;
 }
 
-.footer > .container {
+.footer > .container,
+.footer > .container-fluid {
     padding-right: 15px;
     padding-left: 15px;
 }
@@ -153,14 +157,14 @@ a.desc:after {
 /* Expanded Menu */
 #menu {
     height: 0;
-    width: 100vw;
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     background-color: var(--color_nav);
     overflow: hidden;
     opacity: 0;
-    z-index: 1050;
+    z-index: 3000;
     display: flex;
     transition: height 0.6s ease, opacity 0.6s ease;
     justify-content: center;
@@ -173,7 +177,6 @@ a.desc:after {
     }
 }
 
-/* Expanded state */
 #menu.expanded-menu {
     height: 100vh;
     opacity: 1;
@@ -208,6 +211,7 @@ a.dropdown-item {
 .navbar {
     background-color: var(--color_nav);
     height: 150px;
+    z-index: 2500;
 }
 
 .expanded_menu_icon {
@@ -273,7 +277,7 @@ a.dropdown-item {
     position: absolute;
     left: 0;
     top: 150px;
-    width: 100vw;
+    width: 100%;
     /*height: 900px;*/
     overflow: hidden;
     @media (max-width: 1200px) {
@@ -285,7 +289,7 @@ a.dropdown-item {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100vw;
+    width: 100%;
     height: 50px;
     background-color: var(--light_body_color);
     z-index: 1010;
@@ -296,7 +300,7 @@ a.dropdown-item {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 100vw;
+    width: 100%;
     height: 50px;
     background-color: var(--light_body_color);
     z-index: 1010;
@@ -316,14 +320,14 @@ a.dropdown-item {
 
 .card-row {
     display: flex;
-    margin-bottom: 20px; /* Space between the cards and the next content */
+    margin-bottom: 20px;
     justify-content: center;
 }
 
 .index-card {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Keep content at the top */
+    justify-content: flex-start;
     margin-bottom: 21px;
     position: relative;
     padding-bottom: 30px
@@ -338,7 +342,7 @@ a.dropdown-item {
 }
 
 .card-line {
-    display: inline-block; /* Make the line size relative to its content */
+    display: inline-block;
     width: 80%;
     height: 2px;
     border-radius: 5px;
@@ -433,9 +437,9 @@ a.dropdown-item {
 /*************      CLICKABLE IMAGE CSS      ***************/
 /***********************************************************/
 .image-container {
-    overflow: hidden;   /* comment for scaling past border */
+    overflow: hidden;
     position: relative;
-    border-radius: 0.25rem; /* 0 for 90deg corners */
+    border-radius: 0.25rem;
 }
 
 .image-container img {
@@ -454,7 +458,11 @@ a.dropdown-item {
     padding: 0;
     border-width: 30px;
     border-radius: inherit;
-    border-color: white;    /* comment for default border color */
+    border-color: white;
+}
+
+.modal {
+    z-index: 2500;
 }
 
 .modal-img {
@@ -481,14 +489,6 @@ a.dropdown-item {
     width: 50px;
 }
 
-/*.modal-gallery .modal-header {*/
-/*    background-color: rgba(0, 0, 0, 0.0); !* Black with 80% opacity *!*/
-/*    border: none;*/
-/*    color: white; !* Ensure the text is still readable *!*/
-/*    max-height: 50vh;*/
-/*    max-width: 90vw;*/
-/*}*/
-
 /***********************************************************/
 /****************      CONTACT CSS      ********************/
 /***********************************************************/
@@ -500,13 +500,13 @@ a.dropdown-item {
 }
 
 .contact-container {
-     background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
-     padding: 20px; /* Add some padding if needed */
+     background: rgba(255, 255, 255, 0.7);
+     padding: 20px;
      height: 100%;
  }
 
 .contact-container .content {
-    opacity: 1; /* Ensure text inside has full opacity */
+    opacity: 1;
 }
 
 .bg-contact, .bg-yearlings, .bg-racing {
@@ -526,7 +526,6 @@ a.dropdown-item {
 .btn-contact {
     background: var(--color_nav);
     color: black;
-    /*border: 1px solid black;*/
 }
 
 .btn-contact:hover {
@@ -672,7 +671,7 @@ a.dropdown-item {
     position: absolute;
     top: -3vw;
     left: -3vw;
-    width: 50vw;
+    width: calc(100% + 6vw);
     height: 3vw;
 }
 
@@ -692,7 +691,7 @@ a.dropdown-item {
     position: absolute;
     bottom: -3vw;
     right: -3vw;
-    width: 50vw;
+    width: calc(100% + 6vw);
     height: 3vw;
 }
 
@@ -703,16 +702,17 @@ a.dropdown-item {
     bottom: -3vw;
     right: -3vw;
     width: 3vw;
-    height: 50vw;
+    height: calc(100% + 3vw);
 }
 
 @media (max-width:992px) {
     .services-image,
-    .services-image-2 {
+    .services-image-2,
+    .services-line-transparent-h,
+    .services-line-transparent-v,
+    .services-line-transparent-h2,
+    .services-line-transparent-v2 {
         position: absolute;
-        left: 0;
-        top: 65vw;
-        width: 85vw;
         display: none;
     }
 }
@@ -770,7 +770,6 @@ a.dropdown-item {
     white-space: nowrap;
     margin-left: auto;
     margin-right: auto;
-    /*border: black 3px solid;*/
 }
 
 .scroll-v > table > thead > tr {
